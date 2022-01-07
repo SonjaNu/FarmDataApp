@@ -52,15 +52,28 @@ public class CSVHelper {
     
       //get the value of each field with get() method
       for (CSVRecord csvRecord : csvRecords) {
-    	  Farm farm = new Farm(
-              csvRecord.get("Location"),
-              csvRecord.get("Datetime"),
-              csvRecord.get("SensorType"),
-              Double.parseDouble(csvRecord.get("Value"))
-            );
+
+    	  //Validation data format
+    	  if(!csvRecord.get("Location").equals("") && !csvRecord.get("Datetime").equals("") && !csvRecord.get("SensorType").equals("") && !csvRecord.get("Value").equals("") && csvRecord.get("Value").matches("[0-9.-]*") ) {
+    		 
+        	  Farm farm = new Farm(
+                      csvRecord.get("Location"),
+                      csvRecord.get("Datetime"),
+                      csvRecord.get("SensorType"),
+                      Double.parseDouble(csvRecord.get("Value"))
+                    );
+	  
+        	  //Validation with given rules
+        	  if (farm.getSensorType().equals("pH") && ( farm.getValue() >= 0.0 && farm.getValue() <= 14.0 ) ) {
+        		  farmList.add(farm);
+        	  } else if ( farm.getSensorType().equals("temperature") && (farm.getValue() >= -50.0 && farm.getValue() <= 100.0 ))  {
+        		  farmList.add(farm);
+        	  } else if ( farm.getSensorType().equals("rainFall") && (farm.getValue() >= 0.0 && farm.getValue() <= 500.0 ))  {
+        		  farmList.add(farm);
+        	  }
+    	  }
     	  
-    	  //add values to arraylist called farmlist
-    	  farmList.add(farm);
+
       }
 
       return farmList;

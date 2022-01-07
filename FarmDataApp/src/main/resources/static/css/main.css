@@ -129,3 +129,52 @@ input[type="file"] {
     overflow-x: hidden;
     word-break: break-all;
 }
+
+/* .container {
+    display: grid; esitystapa on grid eli ruudukko
+    grid-template-columns: 1fr; fr-yksikköä voidaan käyttää ruudukko-rivien ja ruudukon sarakkeiden arvoihin. Se tarkoittaa "murto -osaa käytettävissä olevasta tilasta" (“fraction of available space”). 
+                                Ajattele sitä prosentteina käytettävissä olevasta tilasta, kun olet poistanut kiinteän kokoiset ja sisältöpohjaiset sarakkeet/rivit.
+} */
+
+/*Navbar's styles*/
+
+.navbar {
+display: flex;
+justify-content: space-between;
+padding: 38px;
+}
+
+.left-side {
+display: flex;
+}
+
+.navbar > .left-side > div { /*Tämä tarkoittaa, että seuraavat muotoilut tehdään luokan navbar alla olevan luokan left-side sisällä olevien divien kohdalla*/
+    margin-right: 10px;
+    margin-left: 50px;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.navbar-link {
+    height: 22px;
+    border-bottom: 1 px solid transparent;
+    transition: border-bottom 0,5s;
+}
+
+.navbar-link a { /*a viittaa linkkien sisällä olevaan*/
+    color: #8a8a8a; /*linkkien Home ja About väri*/
+    text-decoration: none;
+    transition: color 0,5s; /*väri vaihtuu 0,5 sekunnin viiveellä*/
+}
+
+.navbar-link:hover {
+    border-bottom: 1px solid black; /*Kun navin linkin (esim. Home) päälle menee, sen aen alle tulee suora 1 px paksuinen musta viiva (animaatio)*/
+}
+
+.navbar-link:hover { 
+    color: black;
+}
+
+.navbar-link:hover {
+    color: grey;
+}
