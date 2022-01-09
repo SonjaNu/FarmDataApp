@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     font-weight: 400;
     font-family: Arial, sans-serif;
     font-size: 1rem;
@@ -18,7 +18,7 @@ body {
 body:before {
     height: 50%;
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     background: #00ff80;
@@ -142,6 +142,7 @@ input[type="file"] {
 display: flex;
 justify-content: space-between;
 padding: 38px;
+background-color: #c0c0c0;
 }
 
 .left-side {
@@ -177,4 +178,29 @@ display: flex;
 
 .navbar-link:hover {
     color: grey;
+}
+
+/* Farms  */
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #00ff40;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
 }

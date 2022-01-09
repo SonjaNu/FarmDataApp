@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Farm</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+      <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+  <div class="container">
+
+<div class="navbar">
+
+    <div class="left-side">
+ 
+  <div class="navbar-link">
+        <a href="home.html">Home</a> 
+    </div>
+        <div class="navbar-link">
+        <a href="index.html">Add CSV</a>
+    </div>
+
+    <div class="navbar-link">
+ <a href="farmlist">Farms</a> <!-- /static/templates/farmlist.html -->
+</div>
+</div>
+
+ <div class="right-side"> 
+
+ <div>FARMDATA</div>
+
+</div> 
+</div>
+</div>
+	<h1>Farms</h1>
+	
+	<form class="serach-all" action="#" th:action="@{/farmlist}" method="GET">
+				
+			</form>
+    <table>
+		<tr>
+		    <th>Location</th>
+		    <th>Datetime</th>
+		    <th>Sensortype</th>
+		    <th>Value</th>
+		</tr>  
+    	<tr th:each = "farm : ${farms}">
+    		<td th:text="${farm.location}"></td>
+    		<td th:text="${farm.datetime}"></td>
+    		<td th:text="${farm.sensorType}"></td>
+    		<td th:text="${farm.value}"></td>
+    
+ 			
+    	</tr>
+     </table>
+
+</body>
+</html>
