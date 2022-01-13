@@ -1,59 +1,251 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Farm</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-      <link rel="stylesheet" href="/css/main.css" />
+<title>Farm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
 
-  <div class="container">
+	<div class="container">
 
-<div class="navbar">
+		<div class="navbar">
 
-    <div class="left-side">
- 
-  <div class="navbar-link">
-        <a href="home.html">Home</a> 
-    </div>
-        <div class="navbar-link">
-        <a href="index.html">Add CSV</a>
-    </div>
+			<div class="left-side">
 
-    <div class="navbar-link">
- <a href="farmlist">Farms</a> <!-- /static/templates/farmlist.html -->
-</div>
-</div>
+				<div class="navbar-link">
+					<a href="farmlist">Farms</a>
+				</div>
 
- <div class="right-side"> 
+				<div class="navbar-link">
+					<a href="index.html">Store new farms</a>
+				</div>
 
- <div>FARMDATA</div>
 
-</div> 
-</div>
-</div>
+			</div>
+
+			<div class="right-side">
+
+				<div>FARMDATA APPLICATION</div>
+
+			</div>
+		</div>
+	</div>
 	<h1>Farms</h1>
-	
-	<form class="serach-all" action="#" th:action="@{/farmlist}" method="GET">
-				
-			</form>
-    <table>
+
+	<form class="average-query-container" action="#"
+		th:action="@{/farmlist/min}" method="get">
+
+		<div class="average-box-text">
+			<p>Find minimum value of pH, rain fall or temperature by month,
+				year and location:</p>
+
+			<span> <label for="month"> Month: </label> <select name="key5"
+				id="key5">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+			</select> <label for="year"> Year: </label> <input
+				class="form-control mr-sm-2" type="search" placeholder="Type year"
+				aria-label="Search" name="key6" id="txtSearch" /> <label for="type">
+					Sensor Type: </label> <select name="key8" id="key8">
+					<option value="pH">pH</option>
+					<option value="temperature">Temperature</option>
+					<option value="rainFall">Rain Fall</option>
+			</select> <label for="location"> Location: </label> <input
+				class="form-control mr-sm-2" type="search"
+				placeholder="Type location" aria-label="Search" name="key7"
+				id="txtSearch" /> <label class="btn-success" for="submitting"></label>
+				<input type="submit" value="Submit">
+			</span>
+		</div>
+	</form>
+
+
+
+	<form class="average-query-container" action="#"
+		th:action="@{/farmlist/max}" method="get">
+
+		<div class="average-box-text">
+			<p>Find maximum value of pH, rain fall or temperature by month,
+				year and location:</p>
+
+			<span> <label for="month"> Month: </label> <select name="key1"
+				id="key1">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+			</select> <label for="year"> Year: </label> <input
+				class="form-control mr-sm-2" type="search" placeholder="Type year"
+				aria-label="Search" name="key2" id="txtSearch" /> <label for="type">
+					Sensor Type: </label> <select name="key4" id="key4">
+					<option value="pH">pH</option>
+					<option value="temperature">Temperature</option>
+					<option value="rainFall">Rain Fall</option>
+			</select> <label for="location"> Location: </label> <input
+				class="form-control mr-sm-2" type="search"
+				placeholder="Type location" aria-label="Search" name="key3"
+				id="txtSearch" /> <label for="submitting"></label> <input
+				type="submit" value="Submit">
+			</span>
+		</div>
+	</form>
+
+
+	<form class="average-query-container" action="#"
+		th:action="@{/farmlist/average}" method="get">
+
+		<div class="average-box-text">
+			<p>Count average of pH, rain fall or temperature by month, year
+				and location:</p>
+
+			<span> <label for="month"> Month: </label> <select name="key1"
+				id="key1">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+			</select> <label for="year"> Year: </label> <input
+				class="form-control mr-sm-2" type="search" placeholder="Type year"
+				aria-label="Search" name="key2" id="txtSearch" /> <label for="type">
+					Sensor Type: </label> <select name="key4" id="key4">
+					<option value="pH">pH</option>
+					<option value="temperature">Temperature</option>
+					<option value="rainFall">Rain Fall</option>
+			</select> <label for="location"> Location: </label> <input
+				class="form-control mr-sm-2" type="search"
+				placeholder="Type location" aria-label="Search" name="key3"
+				id="txtSearch" /> <label for="submitting"></label> <input
+				type="submit" value="Submit">
+			</span>
+		</div>
+	</form>
+
+
+	<form class="average-query-container" action="#"
+		th:action="@{/farmlist}" method="get">
+		<div class="average-box-text">
+			<p>Filter by month, year, location and sensor type:</p>
+			<span> <label for="month"> Month: </label> <select
+				name="month" id="month">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+			</select> <label for="year"> Year: </label> <input
+				class="form-control mr-sm-2" type="search" placeholder="Type year"
+				aria-label="Search" name="year" id="txtSearch" /> <label for="types">
+					Sensor Type: </label> <select name="sensor" id="sensor">
+					<option value="pH">pH</option>
+					<option value="temperature">Temperature</option>
+					<option value="rainFall">Rain Fall</option>
+			</select> <label for="locations"> Location: </label> <input
+				class="form-control mr-sm-2" type="search"
+				placeholder="Type location" aria-label="Search" name="loc"
+				id="txtSearch" /> <input type="submit" value="Submit">
+			</span>
+		</div>
+	</form>
+
+
+	<form class="average-query-container" action="#"
+		th:action="@{/farmlist/between}" method="get">
+		<div class="average-box-text">
+			<p>Filter by min and max values of pH, rain fall or temperature:
+			</p>
+			<span> <label for="types"> Sensor Type: </label> <select
+				name="sensor" id="sensor">
+					<option value="pH">pH</option>
+					<option value="temperature">Temperature</option>
+					<option value="rainFall">Rain Fall</option>
+			</select> <label for="min"> Min: </label> <input class="form-control mr-sm-2"
+				type="search" placeholder="Type min value" aria-label="Search"
+				name="min" id="txtSearch" /> <label for="max"> Max: </label> <input
+				class="form-control mr-sm-2" type="search"
+				placeholder="Type max value" aria-label="Search" name="max"
+				id="txtSearch" /> <input type="submit" value="Submit">
+			</span>
+		</div>
+	</form>
+
+
+
+	<form class="average-query-container" action="#"
+		th:action="@{/farmlist/word}" method="get">
+		<label for="keywords"> Filter by keyword: </label> <input
+			class="form-control mr-sm-2" type="search" placeholder="Search"
+			aria-label="Search" name="keyword" id="txtSearch" /> <input
+			type="submit" value="Submit">
+	</form>
+
+
+	<div class=btn-show-farms>
+
+		<input type="button" value="Show all farms" id="btnClear"
+			onclick="clearSearch()" />
+
+	</div>
+
+	<script type="text/javascript">
+		function clearSearch() {
+			window.location = "[[@{/farmlist}]]";
+		}
+	</script>
+
+
+	<table>
 		<tr>
-		    <th>Location</th>
-		    <th>Datetime</th>
-		    <th>Sensortype</th>
-		    <th>Value</th>
-		</tr>  
-    	<tr th:each = "farm : ${farms}">
-    		<td th:text="${farm.location}"></td>
-    		<td th:text="${farm.datetime}"></td>
-    		<td th:text="${farm.sensorType}"></td>
-    		<td th:text="${farm.value}"></td>
-    
- 			
-    	</tr>
-     </table>
+			<th>Location</th>
+			<th>Datetime</th>
+			<th>Sensortype</th>
+			<th>Value</th>
+		</tr>
+		<tr th:each="farm : ${farms}">
+			<td th:text="${farm.location}"></td>
+			<td th:text="${farm.datetime}"></td>
+			<td th:text="${farm.sensorType}"></td>
+			<td th:text="${farm.value}"></td>
+
+
+		</tr>
+	</table>
 
 </body>
 </html>

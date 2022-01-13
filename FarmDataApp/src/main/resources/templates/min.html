@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Farm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="navbar">
+
+			<div class="left-side">
+
+				<div class="navbar-link">
+					<a href="farmlist">Farms</a>
+				</div>
+
+				<div class="navbar-link">
+					<a href="index.html">Store new farms</a>
+				</div>
+			</div>
+
+			<div class="right-side">
+
+				<div>FARMDATA APPLICATION</div>
+
+			</div>
+		</div>
+	</div>
+	<h2>Statistical analysis - minimum</h2>
+
+
+	<div class="average-form">
+		<form class="average-container" th:each="mn : ${min}">
+			<p>
+				<span>Minimum value of </span> <span th:text="${type}"> </span> <span>is</span>
+				<span th:text="${min}"></span> <span>in</span> <span
+					th:text="${location}"> </span> <span>at</span> <span
+					th:text="${month}"></span> <span>/</span> <span th:text="${year}"></span>
+			</p>
+
+			<input type="button" value="Back" id="btnClear"
+				onclick="clearSearch()" />
+
+		</form>
+
+
+		<script type="text/javascript">
+			function clearSearch() {
+				window.location = "[[@{/farmlist}]]";
+			}
+		</script>
+	</div>
+</body>
+</html>

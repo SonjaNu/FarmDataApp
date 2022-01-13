@@ -33,6 +33,14 @@ public class CSVService {
  
   //read the data from the db and return the list of farms
   public List<Farm> getAllFarms() {
-    return farmRepository.findAll();
-  }
+	    return farmRepository.findAll();
+	  }
+  
+  
+//  public List<Farm> getAllFarms(String keyword) {
+//	  if (keyword != null) {
+//          return farmRepository.search(keyword);
+//      }
+//      return farmRepository.findAll();
+//  }
 }

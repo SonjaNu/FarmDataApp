@@ -3,12 +3,16 @@ package farmDataExercise.FarmDataApp.domain;
 import java.io.BufferedReader;
 
 
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -56,9 +60,16 @@ public class CSVHelper {
     	  //Validation data format
     	  if(!csvRecord.get("Location").equals("") && !csvRecord.get("Datetime").equals("") && !csvRecord.get("SensorType").equals("") && !csvRecord.get("Value").equals("") && csvRecord.get("Value").matches("[0-9.-]*") ) {
     		 
+//        	  Farm farm = new Farm(
+//                      csvRecord.get("Location"),
+//                      csvRecord.get("Datetime"),
+//                      csvRecord.get("SensorType"),
+//                      Double.parseDouble(csvRecord.get("Value"))
+//                    );
+//        	  
         	  Farm farm = new Farm(
                       csvRecord.get("Location"),
-                      csvRecord.get("Datetime"),
+                      OffsetDateTime.parse(csvRecord.get("Datetime")),                     
                       csvRecord.get("SensorType"),
                       Double.parseDouble(csvRecord.get("Value"))
                     );
@@ -91,13 +102,28 @@ public class CSVHelper {
       for (Farm farm : farmList) {			//iterate the list 
         List<String> data = Arrays.asList(	//and store values in the form of a String List
               farm.getLocation(),
-              farm.getDatetime(),
+              String.valueOf(farm.getDatetime()),
               farm.getSensorType(),
               String.valueOf(farm.getValue())
             );
 
         csvPrinter.printRecord(data);
       }
+      
+      
+//      try (ByteArrayOutputStream out = new ByteArrayOutputStream();
+//    	        CSVPrinter csvPrinter = new CSVPrinter(new PrintWriter(out), format);) {  //print the value in csv file
+//    	      for (Farm farm : farmList) {			//iterate the list 
+//    	        List<String> data = Arrays.asList(	//and store values in the form of a String List
+//    	              farm.getLocation(),
+//    	              farm.getDatetime(),
+//    	              farm.getSensorType(),
+//    	              String.valueOf(farm.getValue())
+//    	            );
+//
+//    	        csvPrinter.printRecord(data);
+//    	      }
+    	      
       //flush out all the characters or stream data into the final csv file
       csvPrinter.flush();
       return new ByteArrayInputStream(out.toByteArray());	//Retrieve data using toByteArray()

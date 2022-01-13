@@ -1,206 +1,248 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 10px;
-    font-weight: 400;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.58;
-    color: #333;
-    background-color: #408080;
+	margin: 0;
+	padding: 10px;
+	font-weight: 400;
+	font-family: 'Lato', sans-serif;
+	font-size: 1rem;
+	line-height: 1.58;
+	color: #333;
+	background-color: #405d27;
 }
 
 body:before {
-    height: 50%;
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    background: #00ff80;
-    content: "";
-    z-index: 0;
+	height: 50%;
+	width: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: #c0c0c0;
+	content: "";
+	z-index: 0;
 }
 
 .clearfix:after {
-    display: block;
-    content: "";
-    clear: both;
+	display: block;
+	content: "";
+	clear: both;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+	margin-top: 12px;
+	margin-bottom: 12px;
 }
 
 h1 {
-    font-size: 1.7em;
+	font-size: 1.7em;
+	color: #d7d7d7;
+	text-transform: uppercase;
 }
 
 a {
-    color: #408080;
+	color: #408080;
 }
 
 button {
-    box-shadow: none;
-    border: 1px solid transparent;
-    font-size: 14px;
-    outline: none;
-    line-height: 100%;
-    white-space: nowrap;
-    vertical-align: middle;
-    padding: 0.6rem 1rem;
-    border-radius: 2px;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    min-height: 38px;
+	box-shadow: none;
+	border: 1px solid transparent;
+	font-size: 14px;
+	outline: none;
+	line-height: 100%;
+	white-space: nowrap;
+	vertical-align: middle;
+	padding: 0.6rem 1rem;
+	border-radius: 2px;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	min-height: 38px;
 }
 
 button.primary {
-    background-color: #408080;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-    color: #c0c0c0;
+	background-color: #408080;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+	color: #c0c0c0;
 }
 
 input {
-    font-size: 1rem;
+	font-size: 1rem;
 }
 
 input[type="file"] {
-    border: 1px solid #128ff2;
-    padding: 6px;
-    max-width: 100%;
+	border: 1px solid #128ff2;
+	padding: 6px;
+	max-width: 100%;
 }
 
 .file-input {
-    width: 100%;
+	width: 100%;
 }
 
 .submit-btn {
-    display: block;
-    margin-top: 15px;
-    min-width: 100px;
+	display: block;
+	margin-top: 15px;
+	min-width: 100px;
 }
 
 @media screen and (min-width: 500px) {
-    .file-input {
-        width: calc(100% - 115px);
-    }
-
-    .submit-btn {
-        display: inline-block;
-        margin-top: 0;
-        margin-left: 10px;
-    }
+	.file-input {
+		width: calc(100% - 115px);
+	}
+	.submit-btn {
+		display: inline-block;
+		margin-top: 0;
+		margin-left: 10px;
+	}
 }
 
 .upload-container {
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: #e7e7e7;
-      box-shadow: 0 1px 11px rgba(0, 0, 0, 0.4);
-      margin-top: 60px;
-      min-height: 400px;
-      position: relative;
-      padding: 20px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #e7e7e7;
+	box-shadow: 0 1px 11px rgba(0, 0, 0, 0.4);
+	margin-top: 60px;
+	min-height: 400px;
+	position: relative;
+	padding: 20px;
 }
 
 .upload-header {
-    border-bottom: 1px solid #ececec;
+	border-bottom: 1px solid #ececec;
 }
 
 .upload-header h2 {
-    font-weight: 500;
+	font-weight: 500;
 }
 
 .single-upload {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e8e8e8;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #e8e8e8;
 }
 
 .upload-response {
-    overflow-x: hidden;
-    word-break: break-all;
+	overflow-x: hidden;
+	word-break: break-all;
 }
 
-/* .container {
-    display: grid; esitystapa on grid eli ruudukko
-    grid-template-columns: 1fr; fr-yksikköä voidaan käyttää ruudukko-rivien ja ruudukon sarakkeiden arvoihin. Se tarkoittaa "murto -osaa käytettävissä olevasta tilasta" (“fraction of available space”). 
-                                Ajattele sitä prosentteina käytettävissä olevasta tilasta, kun olet poistanut kiinteän kokoiset ja sisältöpohjaiset sarakkeet/rivit.
-} */
 
 /*Navbar's styles*/
-
 .navbar {
-display: flex;
-justify-content: space-between;
-padding: 38px;
-background-color: #c0c0c0;
+	display: flex;
+	justify-content: space-between;
+	padding: 38px;
+	background-color: #c0c0c0;
 }
 
 .left-side {
-display: flex;
+	display: flex;
 }
 
-.navbar > .left-side > div { /*Tämä tarkoittaa, että seuraavat muotoilut tehdään luokan navbar alla olevan luokan left-side sisällä olevien divien kohdalla*/
-    margin-right: 10px;
-    margin-left: 50px;
-    font-size: 1em;
-    text-transform: uppercase;
+.navbar>.left-side>div {
+	margin-right: 10px;
+	margin-left: 50px;
+	font-size: 1em;
+	text-transform: uppercase;
 }
 
 .navbar-link {
-    height: 22px;
-    border-bottom: 1 px solid transparent;
-    transition: border-bottom 0,5s;
+	height: 22px;
+	border-bottom: 1 px solid transparent;
+	transition: border-bottom 0, 5s;
 }
 
-.navbar-link a { /*a viittaa linkkien sisällä olevaan*/
-    color: #8a8a8a; /*linkkien Home ja About väri*/
-    text-decoration: none;
-    transition: color 0,5s; /*väri vaihtuu 0,5 sekunnin viiveellä*/
-}
-
-.navbar-link:hover {
-    border-bottom: 1px solid black; /*Kun navin linkin (esim. Home) päälle menee, sen aen alle tulee suora 1 px paksuinen musta viiva (animaatio)*/
-}
-
-.navbar-link:hover { 
-    color: black;
+.navbar-link a { 
+	color: #8a8a8a; 
+	text-decoration: none;
+	transition: color 0, 5s;
 }
 
 .navbar-link:hover {
-    color: grey;
+	border-bottom: 1px solid black;
 }
 
-/* Farms  */
+.navbar-link:hover {
+	color: black;
+}
 
+.navbar-link:hover {
+	color: grey;
+}
+
+/* farmlist - table  */
 table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+	font-family: 'Lato', sans-serif;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 table td, table th {
-  border: 1px solid #ddd;
-  padding: 8px;
+	border: 1px solid #e7e7e7;
+	padding: 8px;
 }
 
-table tr:nth-child(even){background-color: #00ff40;}
+table tr:nth-child(even) {
+	background-color: #82b74b;
+}
 
-table tr:hover {background-color: #ddd;}
+{
+background
+:
+ 
+#FFF
+}
+table tr:hover {
+	background-color: #ddd;
+}
 
 table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #c1946a;
+	color: #3e4444;
+}
+
+/* farmlist queries */
+.average-query-container {
+	max-width: 1100px;
+	margin-left: 2px;
+	margin-right: auto;
+	background-color: #e7e7e7;
+	box-shadow: 0 1px 11px rgba(0, 0, 0, 0.4);
+	margin-top: 7px;
+	min-height: 50px;
+	position: relative;
+	padding: 5px;
+}
+
+.average-box-text {
+	text-indent: 3px;
+}
+
+/* average.html, min.html, max.html */
+.average-container {
+	max-width: 900px;
+	margin-left: 10px;
+	margin-right: auto;
+	background-color: #e7e7e7;
+	box-shadow: 0 1px 11px rgba(0, 0, 0, 0.4);
+	margin-top: 60px;
+	min-height: 50px;
+	position: relative;
+	padding: 20px;
+}
+
+.average-form {
+	text-indent: 10px;
+}
+
+.btn-show-farms {
+	padding-top: 3px;
+	padding-bottom: 5px;
 }

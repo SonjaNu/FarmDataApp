@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <title>Application for management farm data</title>
-        <link rel="stylesheet" href="/css/main.css" />
-    </head>
-    <body>
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Application for management farm data</title>
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
 
-    <div class="container">
+	<div class="container">
 
-<div class="navbar">
+		<div class="navbar">
 
-    <div class="left-side"> 
- 
-  <div class="navbar-link">
-        <a href="home.html">Home</a> 
-    </div>
-        <div class="navbar-link">
-        <a href="index.html">Add CSV</a> 
-    </div>
+			<div class="left-side">
 
-    <div class="navbar-link">
- <a href="farmlist">Farms</a> <!-- /static/templates/farmlist.html -->
-</div>
-</div>
+				<div class="navbar-link">
+					<a href="farmlist">Farms</a>
+					<!-- /static/templates/farmlist.html -->
+				</div>
 
- <div class="right-side"> 
+				<div class="navbar-link">
+					<a href="index.html">Store new farms</a>
+				</div>
 
- <div>FARMDATA</div>
 
-</div> 
-</div>
-</div>
-      
-        <div class="upload-container">
-            <div class="upload-header">
-                <h2>Import the csv file into database.</h2>
-            </div>
-            <div class="upload-content">
-                <div class="single-upload">
-                    <h3>Upload the csv file </h3>
-                    <form id="singleUploadForm" name="singleUploadForm">
-                        <input id="singleFileUploadInput" type="file" name="file" class="file-input" required />
-                        <button type="submit" class="primary submit-btn">Submit</button>
-                    </form>
-                    <div class="upload-response">
-                        <div id="singleFileUploadError"></div>
-                        <div id="singleFileUploadSuccess"></div>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-        <script src="/js/main.js" ></script>
-    </body>
+			</div>
+
+			<div class="right-side">
+
+				<div>FARMDATA</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="upload-container">
+		<div class="upload-header">
+			<h2>Import the csv file into database.</h2>
+			<p>It can take a while depending on the size of the file. You'll
+				get a message when the file is uploaded successfully.</p>
+		</div>
+		<div class="upload-content">
+			<div class="single-upload">
+				<h3>Upload the csv file</h3>
+				<form id="singleUploadForm" name="singleUploadForm">
+					<input id="singleFileUploadInput" type="file" name="file"
+						class="file-input" required />
+					<button type="submit" class="primary submit-btn">Submit</button>
+				</form>
+				<div class="upload-response">
+					<div id="singleFileUploadError"></div>
+					<div id="singleFileUploadSuccess"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script src="/js/main.js"></script>
+</body>
 </html>
