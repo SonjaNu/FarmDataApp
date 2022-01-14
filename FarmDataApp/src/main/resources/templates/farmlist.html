@@ -23,8 +23,6 @@
 				<div class="navbar-link">
 					<a href="index.html">Store new farms</a>
 				</div>
-
-
 			</div>
 
 			<div class="right-side">
@@ -39,12 +37,13 @@
 	<form class="average-query-container" action="#"
 		th:action="@{/farmlist/min}" method="get">
 
-		<div class="average-box-text">
+		<div class="query-text">
 			<p>Find minimum value of pH, rain fall or temperature by month,
 				year and location:</p>
 
-			<span> <label for="month"> Month: </label> <select name="key5"
-				id="key5">
+			<span> 
+			<label for="month"> Month: </label> 
+			<select name="key5" id="key5">
 					<option value="1">January</option>
 					<option value="2">February</option>
 					<option value="3">March</option>
@@ -57,18 +56,23 @@
 					<option value="10">October</option>
 					<option value="11">November</option>
 					<option value="12">December</option>
-			</select> <label for="year"> Year: </label> <input
-				class="form-control mr-sm-2" type="search" placeholder="Type year"
-				aria-label="Search" name="key6" id="txtSearch" /> <label for="type">
-					Sensor Type: </label> <select name="key8" id="key8">
+			</select> 
+			<label for="year"> Year: </label> 
+			<input
+				type="search" placeholder="Type year"
+				aria-label="Search" name="key6" id="key6" /> 
+				<label for="type"> Sensor Type: </label> 
+					<select name="key8" id="key8">
 					<option value="pH">pH</option>
 					<option value="temperature">Temperature</option>
 					<option value="rainFall">Rain Fall</option>
-			</select> <label for="location"> Location: </label> <input
-				class="form-control mr-sm-2" type="search"
-				placeholder="Type location" aria-label="Search" name="key7"
-				id="txtSearch" /> <label class="btn-success" for="submitting"></label>
-				<input type="submit" value="Submit">
+			</select> 
+			<label for="location"> Location: </label> 
+			<input
+				type="search" placeholder="Type location" aria-label="Search" name="key7"
+				id="key7" /> 
+				<label for="submitting"></label>
+				<input class="btn-success" type="submit" value="Submit">			
 			</span>
 		</div>
 	</form>
@@ -78,7 +82,7 @@
 	<form class="average-query-container" action="#"
 		th:action="@{/farmlist/max}" method="get">
 
-		<div class="average-box-text">
+		<div class="query-text">
 			<p>Find maximum value of pH, rain fall or temperature by month,
 				year and location:</p>
 
@@ -96,18 +100,24 @@
 					<option value="10">October</option>
 					<option value="11">November</option>
 					<option value="12">December</option>
-			</select> <label for="year"> Year: </label> <input
-				class="form-control mr-sm-2" type="search" placeholder="Type year"
-				aria-label="Search" name="key2" id="txtSearch" /> <label for="type">
-					Sensor Type: </label> <select name="key4" id="key4">
+			</select> 
+			<label for="year"> Year: </label> 
+			<input
+				type="search" placeholder="Type year"
+				aria-label="Search" name="key2" id="key2" /> 
+				<label for="type">
+					Sensor Type: </label> 
+					<select name="key4" id="key4">
 					<option value="pH">pH</option>
 					<option value="temperature">Temperature</option>
 					<option value="rainFall">Rain Fall</option>
-			</select> <label for="location"> Location: </label> <input
-				class="form-control mr-sm-2" type="search"
-				placeholder="Type location" aria-label="Search" name="key3"
-				id="txtSearch" /> <label for="submitting"></label> <input
-				type="submit" value="Submit">
+			</select> 
+			<label for="location"> Location: </label> 
+			<input
+				type="search" placeholder="Type location" aria-label="Search" name="key3"
+				id="key3" /> 
+				<label for="submitting"></label> 
+				<input class="btn-success" type="submit" value="Submit">
 			</span>
 		</div>
 	</form>
@@ -144,7 +154,7 @@
 			</select> <label for="location"> Location: </label> <input
 				class="form-control mr-sm-2" type="search"
 				placeholder="Type location" aria-label="Search" name="key3"
-				id="txtSearch" /> <label for="submitting"></label> <input
+				id="txtSearch" /> <label for="submitting"></label> <input class="btn-success"
 				type="submit" value="Submit">
 			</span>
 		</div>
@@ -179,7 +189,7 @@
 			</select> <label for="locations"> Location: </label> <input
 				class="form-control mr-sm-2" type="search"
 				placeholder="Type location" aria-label="Search" name="loc"
-				id="txtSearch" /> <input type="submit" value="Submit">
+				id="txtSearch" /> <input class="btn-success" type="submit" value="Submit">
 			</span>
 		</div>
 	</form>
@@ -200,7 +210,7 @@
 				name="min" id="txtSearch" /> <label for="max"> Max: </label> <input
 				class="form-control mr-sm-2" type="search"
 				placeholder="Type max value" aria-label="Search" name="max"
-				id="txtSearch" /> <input type="submit" value="Submit">
+				id="txtSearch" /> <input class="btn-success" type="submit" value="Submit">
 			</span>
 		</div>
 	</form>
@@ -211,7 +221,7 @@
 		th:action="@{/farmlist/word}" method="get">
 		<label for="keywords"> Filter by keyword: </label> <input
 			class="form-control mr-sm-2" type="search" placeholder="Search"
-			aria-label="Search" name="keyword" id="txtSearch" /> <input
+			aria-label="Search" name="keyword" id="txtSearch" /> <input class="btn-success"
 			type="submit" value="Submit">
 	</form>
 

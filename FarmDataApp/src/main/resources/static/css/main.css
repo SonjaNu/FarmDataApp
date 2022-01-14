@@ -9,7 +9,7 @@ body {
 	padding: 10px;
 	font-weight: 400;
 	font-family: 'Lato', sans-serif;
-	font-size: 1rem;
+	font-size: 15px;
 	line-height: 1.58;
 	color: #333;
 	background-color: #405d27;
@@ -32,7 +32,7 @@ body:before {
 	clear: both;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
 	margin-top: 12px;
 	margin-bottom: 12px;
 }
@@ -41,10 +41,28 @@ h1 {
 	font-size: 1.7em;
 	color: #d7d7d7;
 	text-transform: uppercase;
+	padding-left: 15px;
 }
 
 a {
 	color: #408080;
+}
+
+select {
+	cursor: pointer;
+	position: relative;
+	font-size: 12px;
+	color: #3e4444;
+	width: 100px;
+	height: 20px;
+	background-color: #e6e2d3;
+	padding-top: 0px;
+	border: 2px solid transparent;
+	border-color: #c4b7a6;
+}
+
+select.decorated option:hover {
+	box-shadow: 0 0 10px 100px #ff00ff inset;
 }
 
 button {
@@ -63,13 +81,20 @@ button {
 }
 
 button.primary {
-	background-color: #408080;
+	background-color: #c1946a;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-	color: #c0c0c0;
+	color: #3e4444;
 }
 
 input {
-	font-size: 1rem;
+	cursor: pointer;
+	position: relative;
+	font-size: 13px;
+	color: #3e4444;
+	background-color: #e6e2d3;
+	padding-top: 0px;
+	border: 1px solid transparent;
+	border-color: #c4b7a6;
 }
 
 input[type="file"] {
@@ -130,7 +155,6 @@ input[type="file"] {
 	word-break: break-all;
 }
 
-
 /*Navbar's styles*/
 .navbar {
 	display: flex;
@@ -156,8 +180,8 @@ input[type="file"] {
 	transition: border-bottom 0, 5s;
 }
 
-.navbar-link a { 
-	color: #8a8a8a; 
+.navbar-link a {
+	color: #8a8a8a;
 	text-decoration: none;
 	transition: color 0, 5s;
 }
@@ -192,9 +216,15 @@ table tr:nth-child(even) {
 
 {
 background
+
+
 :
+
  
+
 #FFF
+
+
 }
 table tr:hover {
 	background-color: #ddd;
@@ -210,7 +240,7 @@ table th {
 
 /* farmlist queries */
 .average-query-container {
-	max-width: 1100px;
+	max-width: 1000px;
 	margin-left: 2px;
 	margin-right: auto;
 	background-color: #e7e7e7;
@@ -218,7 +248,7 @@ table th {
 	margin-top: 7px;
 	min-height: 50px;
 	position: relative;
-	padding: 5px;
+	padding: 2px;
 }
 
 .average-box-text {
@@ -243,6 +273,13 @@ table th {
 }
 
 .btn-show-farms {
-	padding-top: 3px;
-	padding-bottom: 5px;
+	margin: 5px;
+	font-size: 16px;
+}
+
+.btn-success {
+	margin-left: 10px;
+	color: #3e4444;
+	background-color: #c1946a;
+	border-color: #b98657;
 }

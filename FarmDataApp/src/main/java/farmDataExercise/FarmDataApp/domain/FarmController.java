@@ -1,7 +1,6 @@
 package farmDataExercise.FarmDataApp.domain;
 
 import java.math.RoundingMode;
-
 import java.text.DecimalFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,15 +19,25 @@ public class FarmController {
 	@Autowired
 	private FarmRepository farmRepository;
 
-	// Filter by month
+	// Filter by month, year, location, sensor type
 	@GetMapping("")
-	public String listByMonths(Model model, String month, String sensor, String loc, String year) {
-		if (month != null && sensor != null && loc != null && year != null) {
-			model.addAttribute("farms", farmRepository.findByMonth(month, sensor, loc, year));
-		} else {
-			model.addAttribute("farms", farmRepository.findAll());
+	public String listByColumns(Model model, String month, String sensor, String loc, String year) {
+		try {
+			if (month != null && sensor != null && loc != null && year != null) {
+				model.addAttribute("farms", farmRepository.findByMonth(month, sensor, loc, year));
+
+			} else {
+				model.addAttribute("farms", farmRepository.findAll());
+
+			}
+
+			return "farmlist";
+
+		} catch (Exception e) {
+
+			return "farmlist";
+
 		}
-		return "farmlist";
 	}
 
 	// Filter by keyword
@@ -53,67 +62,83 @@ public class FarmController {
 		return "farmlist";
 	}
 
-	//return average of the sensor type by month, year and location
+	// return average of the sensor type by month, year and location
 	@GetMapping("/average")
 	public String listAverages(Model model, String key1, String key2, String key3, String key4) {
 
 		DecimalFormat df = new DecimalFormat("#.##");
 		df.setRoundingMode(RoundingMode.CEILING);
-		if (key1 != null && key2 != null && key3 != null && key4 != null) {
-			model.addAttribute("average", df.format(farmRepository.AVG(key1, key2, key3, key4)));
-			model.addAttribute("month", key1);
-			model.addAttribute("year", key2);
-			model.addAttribute("location", key3);
-			model.addAttribute("type", key4);
-			return "average";
-		} else {
-			model.addAttribute("farms", farmRepository.findAll());
+		try {
+			if (key1 != null && key2 != null && key3 != null && key4 != null) {
+				model.addAttribute("average", df.format(farmRepository.AVG(key1, key2, key3, key4)));
+				model.addAttribute("month", key1);
+				model.addAttribute("year", key2);
+				model.addAttribute("location", key3);
+				model.addAttribute("type", key4);
+				return "average";
+			} else {
+				model.addAttribute("farms", farmRepository.findAll());
+			}
 			return "farmlist";
+
+		} catch (Exception e) {
+
+			return "exception";
 		}
 
 	}
 
-	//Find minimum value of the sensor type by month, year and location
+	// Find minimum value of the sensor type by month, year and location
 	@GetMapping("/min")
 	public String listMin(Model model, String key5, String key6, String key7, String key8) {
-
 		DecimalFormat df = new DecimalFormat("#.##");
 		df.setRoundingMode(RoundingMode.CEILING);
-		if (key5 != null && key6 != null && key7 != null && key8 != null) {
-			model.addAttribute("min", df.format(farmRepository.findMin(key5, key6, key7, key8)));
-			model.addAttribute("month", key5);
-			model.addAttribute("year", key6);
-			model.addAttribute("location", key7);
-			model.addAttribute("type", key8);
-			return "min";
-		} else {
-			model.addAttribute("farms", farmRepository.findAll());
+		try {
+			if (key5 != null && key6 != null && key7 != null && key8 != null) {
+				model.addAttribute("min", df.format(farmRepository.findMin(key5, key6, key7, key8)));
+				model.addAttribute("month", key5);
+				model.addAttribute("year", key6);
+				model.addAttribute("location", key7);
+				model.addAttribute("type", key8);
+				return "min";
+			} else {
+				model.addAttribute("farms", farmRepository.findAll());
+			}
 			return "farmlist";
+
+		} catch (Exception e) {
+
+			return "exception";
 		}
 
 	}
 
-	//Find maximum value of the sensor type by month, year and location
+	// Find maximum value of the sensor type by month, year and location
 	@GetMapping("/max")
 	public String listMax(Model model, String key1, String key2, String key3, String key4) {
 
 		DecimalFormat df = new DecimalFormat("#.##");
 		df.setRoundingMode(RoundingMode.CEILING);
-		if (key1 != null && key2 != null && key3 != null && key4 != null) {
-			model.addAttribute("max", df.format(farmRepository.findMax(key1, key2, key3, key4)));
-			model.addAttribute("month", key1);
-			model.addAttribute("year", key2);
-			model.addAttribute("location", key3);
-			model.addAttribute("type", key4);
-			return "max";
-		} else {
-			model.addAttribute("farms", farmRepository.findAll());
+		try {
+			if (key1 != null && key2 != null && key3 != null && key4 != null) {
+				model.addAttribute("max", df.format(farmRepository.findMax(key1, key2, key3, key4)));
+				model.addAttribute("month", key1);
+				model.addAttribute("year", key2);
+				model.addAttribute("location", key3);
+				model.addAttribute("type", key4);
+				return "max";
+			} else {
+				model.addAttribute("farms", farmRepository.findAll());
+			}
 			return "farmlist";
-		}
+		} catch (Exception e) {
 
+			return "exception";
+		}
 	}
 
-	// add and save new farm with parameters (id), location, datetime, sensorType, value
+	// add and save new farm with parameters (id), location, datetime, sensorType,
+	// value
 	@PostMapping("/save")
 	public String saveFarm(@ModelAttribute Farm farm) {
 		// save new farm with its info
