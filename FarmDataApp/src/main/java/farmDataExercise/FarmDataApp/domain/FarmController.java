@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @CrossOrigin
@@ -51,7 +49,7 @@ public class FarmController {
 		return "farmlist";
 	}
 
-	// Filter by keyword by min and max values of the sensor type
+	// Filter by keyword and min and max values of the sensor type
 	@GetMapping("/between")
 	public String listBetween(Model model, String sensor, Double min, Double max) {
 		if (sensor != null && min != null && max != null) {
@@ -137,25 +135,6 @@ public class FarmController {
 		}
 	}
 
-	// add and save new farm with parameters (id), location, datetime, sensorType,
-	// value
-	@PostMapping("/save")
-	public String saveFarm(@ModelAttribute Farm farm) {
-		// save new farm with its info
-		farm.setLocation(farm.getLocation());
-		farm.setDatetime(farm.getDatetime());
-		farm.setSensorType(farm.getSensorType());
-		farm.setValue(farm.getValue());
-		farmRepository.save(farm);
 
-		return "redirect:/farmlist";
-	}
-
-	@GetMapping("/add")
-	public String addFarm(Model model) {
-		model.addAttribute("farm", new Farm());
-
-		return "addFarm";
-	}
 
 }

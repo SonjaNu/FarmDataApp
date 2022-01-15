@@ -15,8 +15,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Farm {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) // The id is generated automatically because the csv files do not
-													// contain an id column
+	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	@Column(name = "id")
 	private long id;
 

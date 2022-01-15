@@ -21,10 +21,10 @@ public interface FarmRepository extends JpaRepository<Farm, Long>{  //entity cla
 	
 	 List<Farm> findByValueBetween(double startValue, double endValue);
 	 
-	 @Query(value="SELECT *  FROM farmdata d WHERE d.location LIKE %:keyword% OR d.sensor_type LIKE %:keyword%", nativeQuery = true)  // OR CONCAT(d.value, '') BETWEEN value1 AND value2 /		
+	 @Query(value="SELECT *  FROM farmdata d WHERE d.location LIKE %:keyword% OR d.sensor_type LIKE %:keyword%", nativeQuery = true) 	
 	 public List<Farm> findByKeyword(@Param("keyword") String keyword);
 	 
-	 @Query(value="SELECT *  FROM farmdata d WHERE EXTRACT(MONTH FROM d.datetime) LIKE %:month% AND EXTRACT(YEAR FROM d.datetime) LIKE %:year% AND d.sensor_type LIKE %:sensor% AND d.location LIKE %:loc%", nativeQuery = true)  // OR CONCAT(d.value, '') BETWEEN value1 AND value2 
+	 @Query(value="SELECT *  FROM farmdata d WHERE EXTRACT(MONTH FROM d.datetime) LIKE %:month% AND EXTRACT(YEAR FROM d.datetime) LIKE %:year% AND d.sensor_type LIKE %:sensor% AND d.location LIKE %:loc%", nativeQuery = true)  
 	 public List<Farm> findByMonth(@Param("month") String month, @Param("sensor") String sensor, @Param("loc") String loc, @Param("year") String year);
 	 
 	 @Query(value="SELECT * FROM farmdata d WHERE d.sensor_type LIKE %:sensor% AND  d.value BETWEEN :min AND :max", nativeQuery = true)

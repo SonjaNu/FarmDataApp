@@ -130,8 +130,8 @@
 			<p>Count average of pH, rain fall or temperature by month, year
 				and location:</p>
 
-			<span> <label for="month"> Month: </label> <select name="key1"
-				id="key1">
+			<span> <label for="month"> Month: </label> 
+			<select name="key1" id="key1">
 					<option value="1">January</option>
 					<option value="2">February</option>
 					<option value="3">March</option>
@@ -144,17 +144,23 @@
 					<option value="10">October</option>
 					<option value="11">November</option>
 					<option value="12">December</option>
-			</select> <label for="year"> Year: </label> <input
+			</select> 
+			<label for="year"> Year: </label> 
+			<input
 				class="form-control mr-sm-2" type="search" placeholder="Type year"
-				aria-label="Search" name="key2" id="txtSearch" /> <label for="type">
+				aria-label="Search" name="key2" id="txtSearch" /> 
+				<label for="type">
 					Sensor Type: </label> <select name="key4" id="key4">
 					<option value="pH">pH</option>
 					<option value="temperature">Temperature</option>
 					<option value="rainFall">Rain Fall</option>
-			</select> <label for="location"> Location: </label> <input
+			</select> 
+			<label for="location"> Location: </label> 
+			<input
 				class="form-control mr-sm-2" type="search"
 				placeholder="Type location" aria-label="Search" name="key3"
-				id="txtSearch" /> <label for="submitting"></label> <input class="btn-success"
+				id="txtSearch" /> <label for="submitting"></label> 
+				<input class="btn-success"
 				type="submit" value="Submit">
 			</span>
 		</div>
@@ -165,7 +171,8 @@
 		th:action="@{/farmlist}" method="get">
 		<div class="average-box-text">
 			<p>Filter by month, year, location and sensor type:</p>
-			<span> <label for="month"> Month: </label> <select
+			<span> <label for="month"> Month: </label> 
+			<select
 				name="month" id="month">
 					<option value="1">January</option>
 					<option value="2">February</option>
@@ -179,7 +186,8 @@
 					<option value="10">October</option>
 					<option value="11">November</option>
 					<option value="12">December</option>
-			</select> <label for="year"> Year: </label> <input
+			</select> 
+			<label for="year"> Year: </label> <input
 				class="form-control mr-sm-2" type="search" placeholder="Type year"
 				aria-label="Search" name="year" id="txtSearch" /> <label for="types">
 					Sensor Type: </label> <select name="sensor" id="sensor">
@@ -200,17 +208,22 @@
 		<div class="average-box-text">
 			<p>Filter by min and max values of pH, rain fall or temperature:
 			</p>
-			<span> <label for="types"> Sensor Type: </label> <select
-				name="sensor" id="sensor">
+			<span> <label for="types"> Sensor Type: </label> 
+			<select name="sensor" id="sensor">			
 					<option value="pH">pH</option>
 					<option value="temperature">Temperature</option>
 					<option value="rainFall">Rain Fall</option>
-			</select> <label for="min"> Min: </label> <input class="form-control mr-sm-2"
+			</select> 
+			<label for="min"> Min: </label> 
+			<input class="form-control mr-sm-2"
 				type="search" placeholder="Type min value" aria-label="Search"
-				name="min" id="txtSearch" /> <label for="max"> Max: </label> <input
+				name="min" id="txtSearch" /> 
+				<label for="max"> Max: </label> 
+				<input
 				class="form-control mr-sm-2" type="search"
 				placeholder="Type max value" aria-label="Search" name="max"
-				id="txtSearch" /> <input class="btn-success" type="submit" value="Submit">
+				id="txtSearch" /> 
+				<input class="btn-success" type="submit" value="Submit">
 			</span>
 		</div>
 	</form>
@@ -219,9 +232,11 @@
 
 	<form class="average-query-container" action="#"
 		th:action="@{/farmlist/word}" method="get">
-		<label for="keywords"> Filter by keyword: </label> <input
+		<label for="keywords"> Filter by keyword: </label> 
+		<input
 			class="form-control mr-sm-2" type="search" placeholder="Search"
-			aria-label="Search" name="keyword" id="txtSearch" /> <input class="btn-success"
+			aria-label="Search" name="keyword" id="txtSearch" /> 
+			<input class="btn-success"
 			type="submit" value="Submit">
 	</form>
 
